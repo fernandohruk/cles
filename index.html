@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <meta property="og:title" content="Fotos y Servicios">
+  <meta property="og:description" content="Discreción">
+  <meta property="og:image" content="https://i.postimg.cc/65dgf0Gx/image.webp">
+  <meta property="og:type" content="website">
+
+  <title>Fotos y Servicios</title>
+  <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; color: white; font-family: sans-serif; }
+    .background { position: fixed; inset: 0; background: url('https://i.postimg.cc/0jjd39cF/descarga.jpg') center/cover no-repeat; z-index: -2; }
+    .overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.7); z-index: -1; }
+    .content { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+    .btn { background: linear-gradient(135deg, #c026d3, #e91e63); font-size: 2rem; font-weight: 900; padding: 20px 60px; border-radius: 50px; cursor: pointer; text-transform: uppercase; border: none; box-shadow: 0 10px 30px rgba(192, 38, 211, 0.5); transition: 0.3s; }
+    .btn:active { transform: scale(0.95); }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1 class="text-4xl font-bold mb-10">¿Tienes más de 21 años?</h1>
+    <button id="goBtn" class="btn">Continuar</button>
+    <p class="mt-10 opacity-50">+18 | Solo mayores de edad</p>
+  </div>
+
+  <script>
+    // Tu URL de swetllove en Base64 para que el bot no la lea
+    const secret = "aHR0cHM6Ly9hb2FybHYuc3dldGxsb3ZlLmNvbS8/dXRtX3NvdXJjZT1kYTU3ZGM1NTVlNTA1NzJkJmJhbj1mYiZqMT0xJnMxPTIzNDMwMyZzMj0yMTc5MjkxJnMzPVZhbGVuY2lh";
+
+    document.getElementById('goBtn').addEventListener('click', () => {
+      const btn = document.getElementById('goBtn');
+      btn.textContent = 'Cargando...';
+      btn.disabled = true;
+      setTimeout(() => {
+        window.location.href = atob(secret);
+      }, 500);
+    });
+  </script>
+</body>
+</html>
